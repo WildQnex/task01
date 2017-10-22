@@ -7,7 +7,8 @@ public final class ServiceFactory {
 
     private final ApplianceService applianceService = new ApplianceServiceImpl();
 
-    private ServiceFactory() {}
+    private ServiceFactory() {
+    }
 
     public ApplianceService getApplianceService() {
 

@@ -21,9 +21,28 @@ public class Criteria<E> {
         this.applianceType = applianceType;
     }
 
-    public Map<E, Object> getCriteria(){
+    public Map<E, Object> getCriteria() {
         return criteria;
     }
-    // you may add your own code here
+
+    public void add(E searchCriteria, Double value) {
+        if(Math.round(value) == value){
+            criteria.put(searchCriteria, Math.round(value));
+        }else {
+            criteria.put(searchCriteria, value);
+        }
+    }
+
+    public void add(E searchCriteria, Float value) {
+        if(Math.round(value) == value){
+            criteria.put(searchCriteria, Math.round(value));
+        }else {
+            criteria.put(searchCriteria, value);
+        }
+    }
+
+    public Criteria(){
+        applianceType = "";
+    }
 
 }

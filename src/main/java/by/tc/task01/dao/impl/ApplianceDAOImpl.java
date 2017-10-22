@@ -14,9 +14,10 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     public <E> Appliance find(Criteria<E> criteria) {
 
         Optional<String> res = FileReader.readLines().stream()
-                .filter(l -> l.contains(criteria.getApplianceType()))
+                .filter(l -> l.toUpperCase().contains(criteria.getApplianceType().toUpperCase()))
                 .filter(l -> criteria.getCriteria().entrySet().stream()
-                        .allMatch(c -> l.contains(c.getKey() + "=" + c.getValue())))
+                        .allMatch(c -> l.toUpperCase().contains(c.getKey().toString().toUpperCase() + "=" + c.getValue().toString().toUpperCase() + ",") |
+                                l.toUpperCase().contains(c.getKey().toString().toUpperCase() + "=" + c.getValue().toString().toUpperCase() + ";")))
                 .findAny();
 
         if (res.isPresent()) {

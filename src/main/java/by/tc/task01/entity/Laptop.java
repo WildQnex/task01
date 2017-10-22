@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 public class Laptop extends Appliance {
 
-    private  double batteryCapacity;
+    private double batteryCapacity;
     private String operationSystem;
     private int memoryRom;
     private int systemMemory;

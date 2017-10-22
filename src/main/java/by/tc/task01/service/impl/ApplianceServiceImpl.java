@@ -7,7 +7,7 @@ import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.validation.Validator;
 
-public class ApplianceServiceImpl implements ApplianceService{
+public class ApplianceServiceImpl implements ApplianceService {
 
     @Override
     public <E> Appliance find(Criteria<E> criteria) {
