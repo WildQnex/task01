@@ -11,8 +11,8 @@ public class Validator {
 
         Set<Object> criteriaValues = new HashSet<>(criteria.getCriteria().values());
 
-        if (criteriaValues.size() == 0) {
-            System.out.print("No criteria specified. ");
+        if (criteriaValues.isEmpty()) {
+            System.out.print("There are no criteria were found. ");
             return false;
         }
         for (Object value : criteriaValues) {
@@ -24,11 +24,13 @@ public class Validator {
             if (value instanceof Number) {
                 Number valueNumber = (Number) value;
                 double number = valueNumber.doubleValue();
-                if (number <= 0) {
-                    System.out.print("The numerical value of criterion can not be less than or equal to zero. ");
+                if (number < 0) {
+                    System.out.print("The numerical value can't be less than zero. ");
                     return false;
                 }
-            } else if (value instanceof String) {
+            }
+
+            if (value instanceof String) {
                 String valueString = (String) value;
                 if (valueString.isEmpty()) {
                     System.out.print("The string value of criterion is empty. ");
@@ -40,8 +42,4 @@ public class Validator {
         return true;
     }
 
-    // you may add your own code here
-
 }
-
-// you may add your own new classes

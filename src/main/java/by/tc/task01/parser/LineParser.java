@@ -1,7 +1,7 @@
 package by.tc.task01.parser;
 
 import by.tc.task01.creator.ApplianceCreator;
-import by.tc.task01.entity.*;
+import by.tc.task01.entity.Appliance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class LineParser {
 
-    private static final Pattern VALUES_PATTERN = Pattern.compile("(?<==)(((\\w+)|(\\d+.?\\d+?))-?)+(?=,|;)");
+    private static final Pattern VALUES_PATTERN = Pattern.compile("(?<==)(((\\w+)|(\\d+.?\\d+?))-?)+(?=[,;])");
 
     private LineParser() {
     }

@@ -50,9 +50,6 @@ public class Range {
 
     @Override
     public String toString() {
-        return "Range{" +
-                "minBound=" + minBound +
-                ", maxBound=" + maxBound +
-                '}';
+        return minBound + "-" + maxBound;
     }
 }

@@ -7,7 +7,7 @@ public class Criteria<E> {
 
     private String applianceType;
 
-    private Map<E, Object> criteria = new HashMap<E, Object>();
+    private Map<E, Object> criteria = new HashMap<>();
 
     public void add(E searchCriteria, Object value) {
         criteria.put(searchCriteria, value);
@@ -26,22 +26,22 @@ public class Criteria<E> {
     }
 
     public void add(E searchCriteria, Double value) {
-        if(Math.round(value) == value){
+        if (Math.round(value) == value) {
             criteria.put(searchCriteria, Math.round(value));
-        }else {
+        } else {
             criteria.put(searchCriteria, value);
         }
     }
 
     public void add(E searchCriteria, Float value) {
-        if(Math.round(value) == value){
+        if (Math.round(value) == value) {
             criteria.put(searchCriteria, Math.round(value));
-        }else {
+        } else {
             criteria.put(searchCriteria, value);
         }
     }
 
-    public Criteria(){
+    public Criteria() {
         applianceType = "";
     }
 
