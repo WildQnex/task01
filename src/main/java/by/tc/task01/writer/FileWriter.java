@@ -3,7 +3,10 @@ package by.tc.task01.writer;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-public class FileWriter {
+public final class FileWriter {
+
+    private FileWriter(){}
+
     public static void addDataToFile(String filePath) throws IOException {
         try (java.io.FileWriter fileWriter = new java.io.FileWriter(filePath);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LineParser {
+public final class LineParser {
 
     private static final Pattern VALUES_PATTERN = Pattern.compile("(?<==)(((\\w+)|(\\d+.?\\d+?))-?)+(?=[,;])");
 

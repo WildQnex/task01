@@ -4,7 +4,9 @@ import by.tc.task01.entity.*;
 
 import java.util.List;
 
-public class ApplianceCreator {
+public final class ApplianceCreator {
+
+    private ApplianceCreator(){}
 
     public static Appliance createAppliance(String applianceType, List<String> list) {
 

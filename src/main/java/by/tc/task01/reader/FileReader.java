@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import static by.tc.task01.writer.FileWriter.addDataToFile;
 
-public class FileReader {
+public final class FileReader {
 
     private final static String filePath;
 
@@ -21,9 +21,8 @@ public class FileReader {
             file.deleteOnExit();
             addDataToFile(filePath);
         } catch (IOException e) {
-            throw new ExceptionInInitializerError("Can't create temp file");
+            throw new ExceptionInInitializerError(e);
         }
-
     }
 
     private FileReader() {
