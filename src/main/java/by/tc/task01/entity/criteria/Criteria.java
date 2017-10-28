@@ -9,6 +9,10 @@ public class Criteria<E> {
 
     private Map<E, Object> criteria = new HashMap<>();
 
+    public Criteria() {
+        applianceType = "";
+    }
+
     public void add(E searchCriteria, Object value) {
         criteria.put(searchCriteria, value);
     }
@@ -39,10 +43,6 @@ public class Criteria<E> {
         } else {
             criteria.put(searchCriteria, value);
         }
-    }
-
-    public Criteria() {
-        applianceType = "";
     }
 
 }

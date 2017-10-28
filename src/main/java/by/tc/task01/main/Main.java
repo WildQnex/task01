@@ -11,56 +11,33 @@ public class Main {
 
     public static void main(String[] args) {
         Appliance appliance;
+
         ServiceFactory factory = ServiceFactory.getInstance();
         ApplianceService service = factory.getApplianceService();
 
-        //////////////////////////////////////////////////////////////////
+        //@Test
+            Criteria<Oven> criteriaOven = new Criteria<Oven>();
+            criteriaOven.setApplianceType("Oven");
+            criteriaOven.add(Oven.POWER_CONSUMPTION, 1000);
 
-        Criteria<Oven> criteriaOven = new Criteria<>();
-        criteriaOven.setApplianceType("Oven");
-        criteriaOven.add(Oven.CAPACITY, 32);
+            appliance = service.find(criteriaOven);
 
-        appliance = service.find(criteriaOven);
+            by.tc.task01.entity.Oven oven = (by.tc.task01.entity.Oven)appliance;
+            System.out.println(oven);
+        System.out.println(oven.getPowerConsumption() == 1000);
+            //.assertEquals(oven.getPowerConsumption(), 1000, 0.0000000000001);
 
-        //if(appliance.getClass() == by.tc.task01.entity.Oven.class) {}
-        //by.tc.task01.entity.Oven oven = (by.tc.task01.entity.Oven) appliance;
-        //if(oven.getCapacity() == 3) {}
+       // @Test
+            Criteria<TabletPC> criteriaTabletPC = new Criteria<TabletPC>();
+            criteriaTabletPC.setApplianceType("TabletPC");
+            criteriaTabletPC.add(TabletPC.COLOR, "BLUE");
 
-        PrintApplianceInfo.print(appliance);
+            appliance = service.find(criteriaTabletPC);
+            by.tc.task01.entity.TabletPC tabletPC = (by.tc.task01.entity.TabletPC)appliance;
+        System.out.println(tabletPC);
+        System.out.println(tabletPC.getColor().toUpperCase().equals("BLUE"));
+            //Assert.assertEquals(tabletPC.getColor().toUpperCase(), "BLUE");
 
-        //////////////////////////////////////////////////////////////////
-
-        criteriaOven = new Criteria<>();
-
-        criteriaOven.add(Oven.HEIGHT, 200);
-        criteriaOven.add(Oven.DEPTH, 300);
-
-        appliance = service.find(criteriaOven);
-
-        PrintApplianceInfo.print(appliance);
-
-        //////////////////////////////////////////////////////////////////
-
-        Criteria<TabletPC> criteriaTabletPC = new Criteria<>();
-        criteriaTabletPC.add(TabletPC.COLOR, "BLUE");
-        criteriaTabletPC.add(TabletPC.DISPLAY_INCHES, 14);
-        criteriaTabletPC.add(TabletPC.MEMORY_ROM, 4);
-
-        appliance = service.find(criteriaTabletPC);
-
-        PrintApplianceInfo.print(appliance);
-
-
-        ////////////////////////////////////////////////////////////////
-
-
-        Criteria<Speakers> criteriaSpeakers = new Criteria<>();
-        criteriaSpeakers.add(Speakers.FREQUENCY_RANGE, "2-3.5");
-
-
-        appliance = service.find(criteriaSpeakers);
-
-        PrintApplianceInfo.print(appliance);
 
     }
 

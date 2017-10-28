@@ -6,7 +6,8 @@ import java.util.List;
 
 public final class ApplianceCreator {
 
-    private ApplianceCreator(){}
+    private ApplianceCreator() {
+    }
 
     public static Appliance createAppliance(String applianceType, List<String> list) {
 

@@ -1,5 +1,7 @@
 package by.tc.task01.reader;
 
+import by.tc.task01.writer.ApplianceFileWriter;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,9 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static by.tc.task01.writer.FileWriter.addDataToFile;
-
-public final class FileReader {
+public final class ApplianceFileReader {
 
     private final static String filePath;
 
@@ -19,13 +19,13 @@ public final class FileReader {
             File file = File.createTempFile("tmp", "txt");
             filePath = file.getAbsolutePath();
             file.deleteOnExit();
-            addDataToFile(filePath);
+            ApplianceFileWriter.addDataToFile(filePath);
         } catch (IOException e) {
             throw new ExceptionInInitializerError(e);
         }
     }
 
-    private FileReader() {
+    private ApplianceFileReader() {
     }
 
     public static List<String> readLines() {

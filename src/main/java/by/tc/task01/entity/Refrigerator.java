@@ -4,16 +4,16 @@ public class Refrigerator extends Appliance {
 
     private int powerConsumption;
     private int weight;
-    private int freezerCpacity;
-    private double overalCapacity;
+    private int freezerCapacity;
+    private double overallCapacity;
     private int height;
     private int width;
 
-    public Refrigerator(int powerConsumption, int weight, int freezerCpacity, double overalCapacity, int height, int width) {
+    public Refrigerator(int powerConsumption, int weight, int freezerCapacity, double overallCapacity, int height, int width) {
         this.powerConsumption = powerConsumption;
         this.weight = weight;
-        this.freezerCpacity = freezerCpacity;
-        this.overalCapacity = overalCapacity;
+        this.freezerCapacity = freezerCapacity;
+        this.overallCapacity = overallCapacity;
         this.height = height;
         this.width = width;
     }
@@ -35,19 +35,19 @@ public class Refrigerator extends Appliance {
     }
 
     public int getFreezerCpacity() {
-        return freezerCpacity;
+        return freezerCapacity;
     }
 
-    public void setFreezerCpacity(int freezerCpacity) {
-        this.freezerCpacity = freezerCpacity;
+    public void setFreezerCpacity(int freezerCapacity) {
+        this.freezerCapacity = freezerCapacity;
     }
 
     public double getOveralCapacity() {
-        return overalCapacity;
+        return overallCapacity;
     }
 
-    public void setOveralCapacity(double overalCapacity) {
-        this.overalCapacity = overalCapacity;
+    public void setOveralCapacity(double overallCapacity) {
+        this.overallCapacity = overallCapacity;
     }
 
     public int getHeight() {
@@ -75,8 +75,8 @@ public class Refrigerator extends Appliance {
 
         if (powerConsumption != that.powerConsumption) return false;
         if (weight != that.weight) return false;
-        if (freezerCpacity != that.freezerCpacity) return false;
-        if (Double.compare(that.overalCapacity, overalCapacity) != 0) return false;
+        if (freezerCapacity != that.freezerCapacity) return false;
+        if (Double.compare(that.overallCapacity, overallCapacity) != 0) return false;
         if (height != that.height) return false;
         return width == that.width;
     }
@@ -87,8 +87,8 @@ public class Refrigerator extends Appliance {
         long temp;
         result = powerConsumption;
         result = 31 * result + weight;
-        result = 31 * result + freezerCpacity;
-        temp = Double.doubleToLongBits(overalCapacity);
+        result = 31 * result + freezerCapacity;
+        temp = Double.doubleToLongBits(overallCapacity);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + height;
         result = 31 * result + width;
@@ -100,8 +100,8 @@ public class Refrigerator extends Appliance {
         return "Refrigerator{" +
                 "powerConsumption=" + powerConsumption +
                 ", weight=" + weight +
-                ", freezerCpacity=" + freezerCpacity +
-                ", overalCapacity=" + overalCapacity +
+                ", freezerCapacity=" + freezerCapacity +
+                ", overallCapacity=" + overallCapacity +
                 ", height=" + height +
                 ", width=" + width +
                 '}';

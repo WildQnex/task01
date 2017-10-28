@@ -1,14 +1,16 @@
 package by.tc.task01.writer;
 
 import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
-public final class FileWriter {
+public final class ApplianceFileWriter {
 
-    private FileWriter(){}
+    private ApplianceFileWriter() {
+    }
 
     public static void addDataToFile(String filePath) throws IOException {
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(filePath);
+        try (FileWriter fileWriter = new FileWriter(filePath);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
 
             bufferedWriter.write("Oven : POWER_CONSUMPTION=1000, WEIGHT=10, CAPACITY=32, DEPTH=60, HEIGHT=45.5, WIDTH=59.5;\n" +

@@ -1,11 +1,15 @@
 package by.tc.task01.entity;
 
 public class Range {
+
+    private static String DELIMITER = "-";
+
     private double minBound;
     private double maxBound;
 
+
     public Range(String range) {
-        String[] values = range.split("-");
+        String[] values = range.split(DELIMITER);
         this.minBound = Double.parseDouble(values[0]);
         this.maxBound = Double.parseDouble(values[1]);
     }
@@ -50,6 +54,6 @@ public class Range {
 
     @Override
     public String toString() {
-        return minBound + "-" + maxBound;
+        return minBound + DELIMITER + maxBound;
     }
 }
